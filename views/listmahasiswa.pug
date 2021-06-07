@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  a.btn.btn-primary#tambah(href="/mahasiswa/add",role='button')
+    | Add
+  table.table.table-striped.table-hover 
+    tr#tabel
+        td
+            | Nama 
+        td 
+            | NIM
+        td 
+            | Aksi
+    each val, index in data
+        tr#content
+            td=val.Nama
+            td=val.Nim
+            td
+                a.btn.btn-primary#edit(href='/mahasiswa/'+ val.id +'/edit')
+                    | edit
+                a.btn.btn-danger(href='/mahasiswa/'+ val.id +'/delete')
+                    | delete

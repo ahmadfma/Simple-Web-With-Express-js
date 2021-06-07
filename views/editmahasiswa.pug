@@ -1,0 +1,25 @@
+extends layout
+
+block content 
+    .container.conteiner-center
+        h1.mt-5.text-center=title 
+        form(method='POST')
+            .form-container
+                table.table.table-striped.table-hover 
+                    tr#tabel
+                        td 
+                            label(for="Nama")
+                                | Nama
+                        td 
+                            | :
+                        td
+                            input(type='text',name='Nama', value=data.Nama)
+                    tr#tabel
+                        td
+                            label(for="Nim")
+                                | NIM
+                        td 
+                            | :
+                        td
+                            input(type='text',name='Nim', value=data.Nim)
+                input#simpan(type='submit',name='Simpan')
